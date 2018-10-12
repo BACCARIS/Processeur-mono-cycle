@@ -38,9 +38,11 @@ begin
       RA <= "1111"; -- A = R(15)
       OP <= "11"; -- OP = get(A)
       
-      WE <= '1'; -- activation de l'ecriture
-      RW <= "0001"; -- on met la valeur dans R(1)
       wait for 10 ns;
+
+      RW <= "0001"; -- on met la valeur dans R(1)
+      WE <= '1'; -- activation de l'ecriture
+      wait for 2 ns;
       
       --operation 2
       WE <= '0';
@@ -48,9 +50,11 @@ begin
       RB <= "1111"; -- B = R(15)
       OP <= "00"; -- OP = ADD 
       
-      WE <= '1';
-      RW <= "0001"; -- on met la valeur dans R(1)
       wait for 10 ns;
+      
+      RW <= "0001"; -- on met la valeur dans R(1)
+      WE <= '1';
+      wait for 2 ns;
       
       --operation 3
       WE <= '0';
@@ -58,9 +62,11 @@ begin
       RB <= "1111"; -- B = R(15)
       OP <= "00"; -- OP = ADD
       
-      WE <= '1';
-      RW <= "0010"; -- on met la valeur dans R(2)
       wait for 10 ns;
+      
+      RW <= "0010"; -- on met la valeur dans R(2)
+      WE <= '1';
+      wait for 2 ns;
       
       --operation 4
       WE <= '0';
@@ -68,9 +74,11 @@ begin
       RB <= "1111"; -- B = R(15)
       OP <= "10"; -- OP = SUB
       
+      wait for 10 ns;
+      
       WE <= '1';
       RW <= "0011"; -- on met la valeur dans R(3)
-      wait for 10 ns;
+      wait for 2 ns;
       
       --operation 5
       WE <='0';
@@ -78,9 +86,11 @@ begin
       RB <= "1111"; -- B = R(15)
       OP <= "10"; -- OP = SUB
       
+      wait for 10 ns;
+      
       WE <= '1';
       RW <= "0101"; -- on met la valeur dans R(5);
-      wait for 10 ns;
+      wait for 2 ns;
 
       
     end process test;
