@@ -22,7 +22,7 @@ architecture arch_ALU_registre of ALU_registre is
 
 begin
   
-	registre : entity work.BancRegistres(comportemental_bancregistres) port map (CLK, Reset, busW, RA, RB, RW, WE, busA, busB);
+	registre : entity work.banc_registres(comportemental_bancregistres) port map (CLK, Reset, busW, RA, RB, RW, WE, busA, busB);
 	calcul : entity work.ALU(comportemental_ALU) port map (OP, busA, busB, busW, N);
 
 

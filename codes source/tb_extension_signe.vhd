@@ -14,7 +14,7 @@ architecture test of tb_ExtensionSigne is
 
 begin
 
-    test: entity work.ExtensionSigne generic map (N)
+    test: entity work.extension_signe generic map (N)
     	port map (E, S);
 
     test_process: process

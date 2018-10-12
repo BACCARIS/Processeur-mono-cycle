@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_arith.all;
 
-entity ExtensionSigne is
+entity extension_signe is
 
 	generic ( N: integer );
 	port (
@@ -13,7 +13,7 @@ entity ExtensionSigne is
 
 end entity;
 
-architecture archi of ExtensionSigne is
+architecture archi of extension_signe is
 begin
 
 	S <= SXT(E, S'length);

@@ -14,7 +14,7 @@ architecture tb_comportemental_banc of tb_banc is
     signal A, B: std_logic_vector (31 downto 0);
 begin
   
-  T0 : entity work.BancRegistres(comportemental_bancregistres)
+  T0 : entity work.banc_registres(comportemental_bancregistres)
   port map ( CLK, RST, W, RA, RB, RW, WE, A, B );
     
   clk_gen : process

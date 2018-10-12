@@ -1,10 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
---use ieee.std_logic_arith.all;
---use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-entity BancRegistres is
+entity banc_registres is
   port(
     CLK, RST: in std_logic;
     W: in std_logic_vector (31 downto 0);
@@ -17,7 +15,7 @@ end entity;
 
 
 
-architecture comportemental_bancregistres of BancRegistres is
+architecture comportemental_bancregistres of banc_registres is
   type table is array (15 downto 0) of std_logic_vector (31 downto 0);
 
 
