@@ -7,13 +7,13 @@ end entity tb_mux2v1;
 
 architecture tb_behavioral_mux2v1 of tb_mux2v1 is 
   
-  signal N : integer ;
+  signal N : integer := 4 ;
   signal A, B, S : std_logic_vector ( N-1 downto 0);
   signal COM : std_logic;
 
 begin
   
-  T0 : entity work.mux2v1 generic map ( 4 )
+  T0 : entity work.mux2v1 generic map ( N )
   port map ( A, B, COM, S);
     
   test : process

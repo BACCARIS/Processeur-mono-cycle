@@ -30,6 +30,10 @@ begin
 	    E <= "11111111";
 
     	wait for 5 ns;
+    	
+    	E <= "10000001";
+    	
+    	wait for 5 ns;
 
     	assert false report "Test done." severity note;
 	    wait;
