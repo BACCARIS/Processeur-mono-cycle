@@ -50,7 +50,7 @@ architecture archi_decodeur_instructions of decodeur_instructions is
       elsif (op(11 downto 4) = "11101010") then
         instr_courante <= BAL;
       elsif (op(11 downto 4) = "10111010") then
-        instr_courante <= BAL;
+        instr_courante <= BLT;
       end if;
         
     end process instruction_select;
