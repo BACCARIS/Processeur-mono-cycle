@@ -27,6 +27,7 @@ architecture archi of tb_processeur_monocycle is
       RST <= '1';
       wait for 2 ns;
       RST <= '0';
+      wait ;
 
     end process;
   end architecture;
