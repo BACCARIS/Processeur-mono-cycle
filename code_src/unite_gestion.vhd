@@ -33,15 +33,15 @@ architecture archi_unite_gestion of unite_gestion is
       else
         if (rising_edge(CLK) and clk = '1') then
           registre <= PC;
+          if ( nPCsel = '0' ) then
+            PC <= PC + 1;
+          else
+            PC <= PC + 1 +  extended_offset;
+          end if;
         else
           registre <= registre;
         end if;
         
-        if ( nPCsel = '0' ) then
-          PC <= PC + 1;
-        else
-          PC <= PC + 1 +  extended_offset;
-        end if;
       
       end if;
     end process; 
