@@ -31,7 +31,7 @@ architecture archi_unite_gestion of unite_gestion is
         PC <= (others => '0' );
         registre <= ( others => '0');
       else
-        if clk = '1' then
+        if (rising_edge(CLK) and clk = '1') then
           registre <= PC;
         else
           registre <= registre;
@@ -47,5 +47,5 @@ architecture archi_unite_gestion of unite_gestion is
     end process; 
       
         
-    instruction_mem : entity work.instruction_memory port map( PC, instruction);  
+    instruction_mem : entity work.instruction_memory port map(CLK, RST, PC, instruction);  
   end architecture;

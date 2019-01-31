@@ -4,6 +4,7 @@ use IEEE.numeric_std.all;
 
 entity instruction_memory is 
 	port(
+	  CLK, RST : in std_logic;
 		PC: in std_logic_vector (31 downto 0);
 		Instruction: out std_logic_vector (31 downto 0)
     );
@@ -33,6 +34,15 @@ end init_mem;
 signal mem: RAM64x32 := init_mem;
 
 begin 
-			Instruction <= mem(to_integer (unsigned (PC)));
+  process(clk, rst)
+  begin
+      if RST = '1' then
+        mem <= init_mem;
+      else 
+        if(rising_edge(CLK) and clk = '1') then
+          Instruction <= mem(to_integer (unsigned (PC)));
+			 end if;
+			end if;
+		end process;
 end architecture;
 	

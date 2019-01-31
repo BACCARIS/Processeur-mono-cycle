@@ -24,7 +24,7 @@ architecture archi of unite_controle is
     if (RST = '1') then
       SOUT <= (others => '0');
     else
-      if (CLK'EVENT and CLK = '1') then
+      if (rising_edge(CLK) and CLK = '1') then
         if (WE = '1') then
           SOUT(0) <= DATAIN;
         else
